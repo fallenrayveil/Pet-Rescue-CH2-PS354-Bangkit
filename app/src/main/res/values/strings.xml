@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">PetRescueCapstone</string>
+    <string name="next">Next</string>
+
+    <string name="slide1_title">Create a report in case you lose your pet.</string>
+    <string name="slide2_title">Help other community members find their lost pet.</string>
+    <string name="slide3_title">You will be notified once someone finds your lost pet.</string>
+    <string name="get_started">Get Started</string>
+    <string name="sign_in_with_email">Sign In With Email</string>
+    <string name="you_must_be_logged_in_to_view_this_screen">You Must be logged in to view this screen</string>
+    <string name="email">Email</string>
+    <string name="password">Password\n</string>
+    <string name="sign_in">Sign In</string>
+    <string name="no_account_sign_up">No Account? Sign Up</string>
+    <string name="signup_with_email">SignUp With Email</string>
+    <string name="descriptionSignUp">You Must be logged in to view this screen</string>
+    <string name="have_an_account_sign_in">Have an Account? Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user_info">Info Account</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+</resources>
