@@ -1,3 +1,4 @@
+process.env['TF_CPP_MIN_LOG_LEVEL'] = '2'; // 0 = default, 1 = info, 2 = warning, 3 = error
 const express = require('express');
 const multer = require('multer');
 const tf = require('@tensorflow/tfjs-node');
@@ -23,9 +24,9 @@ async function downloadFile() {
       .file('inceptionv3.tflite')
       .download(options);
   
-    console.log(
-      `gs://${bucketName}/${srcFilename} downloaded to ${destFilename}.`
-    );
+    // console.log(
+    //   `gs://${bucketName}/${srcFilename} downloaded to ${destFilename}.`
+    // );
   }
   
 //   downloadFile().catch(console.error);
@@ -57,4 +58,4 @@ downloadFile().catch(console.error);
 //   res.json({ prediction: prediction.dataSync() });
 // });
 
-// app.listen(3000, () => console.log('Server started on port 3000'));
+app.listen(3000, () => console.log('Server started on port 3000'));
