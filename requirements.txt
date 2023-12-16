@@ -1,0 +1,4 @@
+flask==2.0.1
+jinja2==3.0.1
+tensorflow==2.10.1
+Pillow
