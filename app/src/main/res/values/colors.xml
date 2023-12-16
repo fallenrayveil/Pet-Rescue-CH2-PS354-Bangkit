@@ -5,4 +5,8 @@
 
     <color name="LightCoral">#FF8080</color>FF8080
     <color name="ApproxPink">#FFBFBF</color>FFBFBF
+    <color name="Green">#65B741</color>65B741
+    <color name="DarkGreen">#508D69</color>508D69
+    <color name="DarkGrey">#607274</color>607274
+
 </resources>

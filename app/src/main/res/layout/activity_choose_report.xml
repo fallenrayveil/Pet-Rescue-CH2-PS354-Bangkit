@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LightCoral"
+    tools:context=".ui.ChooseReportActivity">
+    <ImageView
+        android:id="@+id/arrowBack"
+        app:tint="@color/white"
+        style="@style/arrowBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/my_pets"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/signikanegative_variablefont_wght"
+        app:layout_constraintStart_toEndOf="@id/arrowBack"
+        app:layout_constraintTop_toTopOf="@id/arrowBack"
+        app:layout_constraintBottom_toBottomOf="@id/arrowBack"/>
+
+    <LinearLayout
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corner_atas"
+        android:backgroundTint="?android:attr/colorBackground"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/title_report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/toolbar"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/signikanegative_variablefont_wght"
+            android:text="@string/is_your_pet_lost"
+            android:textColor="@color/LightCoral"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/reportLost"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/LightCoral"
+            android:fontFamily="@font/signikanegative_variablefont_wght"
+            android:text="@string/report_a_lost_pet"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+
+        <TextView
+            android:id="@+id/reportFound"
+            android:layout_width="295dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/signikanegative_variablefont_wght"
+            android:text="Have you ever found someone's pet but don't know who the owner is?"
+            android:textColor="@color/LightCoral"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/report_found"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/LightCoral"
+            android:fontFamily="@font/signikanegative_variablefont_wght"
+            android:text="@string/report_found_pet"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

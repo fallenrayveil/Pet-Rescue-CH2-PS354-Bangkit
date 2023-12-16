@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/button_search"
+        android:title="Search"
+        android:icon="@drawable/baseline_youtube_searched_for_24"/>
+    <item
+        android:id="@+id/button_article"
+        android:title="article"
+        android:icon="@drawable/baseline_article_24"/>
+    <item
+        android:id="@+id/button_list_pet"
+        android:title="My Tail"
+        android:icon="@drawable/baseline_favorite_24"/>
+    <item
+        android:id="@+id/button_pet"
+        android:title="My Pet"
+        android:icon="@drawable/baseline_pets_24"/>
+    <item
+        android:id="@+id/button_account"
+        android:title="Profile"
+        android:icon="@drawable/baseline_account_circle_24"/>
+</menu>

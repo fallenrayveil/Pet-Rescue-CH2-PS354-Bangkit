@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">PetRescueCapstone</string>
-    <string name="next">Next</string>
+    <string name="next">NEXT</string>
 
     <string name="slide1_title">Create a report in case you lose your pet.</string>
     <string name="slide2_title">Help other community members find their lost pet.</string>
@@ -17,8 +17,56 @@
     <string name="have_an_account_sign_in">Have an Account? Sign In</string>
     <string name="sign_up">Sign Up</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="user_info">Info Account</string>
     <string name="name">Name</string>
     <string name="phone_number">Phone Number</string>
+    <string name="petname">pet name</string>
+    <string name="descriptionAddress">Address</string>
+    <string name="pet_rescue_name_lookup">Pet Rescue Name Lookup</string>
+    <string name="hold_any_pet_s_name_to_copy_and_paste">Hold any pet’s name to copy and paste</string>
+    <string name="searchbar_hint">Search your Name Pet</string>
+    <string name="title_article">Title</string>
+    <string name="description_article">Description Article</string>
+    <string name="writer_name">Publisher\n</string>
+    <string name="title_search_pet">Search Yout Pet</string>
+    <string name="article">Article</string>
+    <string name="lost">Lost</string>
+    <string name="camera">Camera\n</string>
+    <string name="gallery">Gallery</string>
+    <string name="report_pet">Report Pet</string>
+    <string name="pet">Kucing</string>
+    <string name="pet_name">Pet : Kucing Name</string>
+    <string name="type_pet">type pet</string>
+    <string name="type_pett">Type Pet</string>
+    <string name="gender">Gender</string>
+    <string name="gender_pet">Gender pet</string>
+    <string name="Type_pett">Type pet</string>
+    <string name="missing_date">Missing Date</string>
+    <string name="date">22-11-2023</string>
+    <string name="select_provincy">Select Provincy</string>
+    <string name="select_regency">Select Regency</string>
+    <string name="lost_area">Lost Area</string>
+    <string name="reward">Reward</string>
+    <string name="report_a_lost_pet">Report a Lost Pet</string>
+    <string name="report_found_pet">Report Found Pet</string>
+    <string name="is_your_pet_lost">Is Your Pet Lost?</string>
+    <string name="ega_saputra">Ega Saputra</string>
+    <string name="egasaxxxxxx_gmail_com">egasaxxxxxx@gmail.com</string>
+    <string name="sign_in_as">Sign In as</string>
+    <string name="my_pets">My Pets</string>
+    <string name="pet_info">Pet Info</string>
+    <string name="lost_and_found">Lost And Found</string>
+    <string name="id_pet">ID Pet : %s </string>
+    <string name="Pet">Pet : %s </string>
+    <string name="name_meow">Name : %s </string>
+    <string name="type_anggora">Type : %s </string>
+    <string name="email_egasaputra_gmail_com">Email : %s </string>
+    <string name="handphone_08727363464">Handphone : %s </string>
+    <string name="reward_money_300_thousand">Reward : %s </string>
+    <string name="delete_post">Delete Post</string>
+    <string name="pet_have_united">Pet Have United</string>
+    <string name="address">Address : %s, %s, %s </string>
+    <string name="genderPet">Gender : %s </string>
+    <string name="dateLostFound">Date : %s </string>
+    <string name="dark_mode">Dark Mode\n</string>
 </resources>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.SearchFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/rounded_corner_atas"
+        android:minHeight="?attr/actionBarSize"
+        app:title="@string/title_search_pet"
+        app:titleTextColor="@color/white"
+        android:fontFamily="@font/signikanegative_variablefont_wght"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/signikanegative_variablefont_wght"
+        android:text="@string/pet_rescue_name_lookup"
+        android:textColor="@color/LightCoral"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/desc_text_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_search"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
+        android:fontFamily="@font/signikanegative_variablefont_wght"
+        android:gravity="center"
+        android:text="@string/hold_any_pet_s_name_to_copy_and_paste"
+        android:textColor="@color/LightCoral"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.search.SearchBar
+        android:id="@+id/searchBar"
+        android:layout_width="282dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/desc_text_search"
+        android:layout_alignParentStart="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="13dp"
+        android:hint="@string/searchbar_hint" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pet_rv"
+        android:layout_width="match_parent"
+        android:layout_height="523dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/searchBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraint_toBottomOf="@id/searchBar" />
+
+    <ImageButton
+       android:id="@+id/search_id"
+       android:layout_width="47dp"
+       android:layout_height="42dp"
+       android:layout_below="@id/desc_text_search"
+       android:layout_marginTop="12dp"
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="32dp"
+       android:layout_toEndOf="@id/searchBar"
+       android:background="@drawable/circle_background"
+        android:src="@drawable/baseline_youtube_searched_for_24"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>

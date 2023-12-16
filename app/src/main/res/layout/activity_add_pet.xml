@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AddPetActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="413dp"
+        android:layout_height="367dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/btn"
+        android:layout_width="393dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="88dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView">
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="150dp"
+            app:cornerRadius="10dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:textSize="15dp"
+            android:text="@string/gallery" />
+
+        <Button
+            android:id="@+id/btnCamera"
+            android:layout_width="150dp"
+            android:textSize="15dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cornerRadius="10dp"
+            android:text="@string/camera" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/btnUpload"
+        android:layout_width="378dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16dp"
+        app:cornerRadius="10dp"
+        android:fontFamily="@font/signikanegative_variablefont_wght"
+        android:text="@string/next"
+        android:textStyle="bold"
+        android:backgroundTint="@color/Green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnUpload" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
