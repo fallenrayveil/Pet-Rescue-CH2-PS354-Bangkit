@@ -1,17 +1,22 @@
-# Use an official Node.js runtime as a parent image
-FROM node:16-alpine
+# Stage 1: Build dependencies
+FROM node:16-alpine AS builder
 
-# Set the working directory in the container to /app
 WORKDIR /app
 
-# Add the current directory contents into the container at /app
-ADD . /app
-
-# Install any needed packages specified in package.json
+# Copy package.json and install dependencies
+COPY package.json ./
 RUN npm install
 
-# Make port 3000 available to the world outside this container
+# Stage 2: Build the final image
+FROM node:16-alpine
+
+WORKDIR /app
+
+# Copy the built application files
+COPY --from=builder /app/ .
+
+# Expose the port your API listens on (e.g., 3000)
 EXPOSE 3000
 
-# Run app.js when the container launches
-CMD node app.js
+# Start the API server
+CMD ["node", "app.js"]
