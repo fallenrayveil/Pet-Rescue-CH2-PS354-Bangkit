@@ -1,4 +1,16 @@
-flask==2.0.1
-jinja2==3.0.1
-tensorflow==2.10.1
-Pillow
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "@tensorflow/tfjs-node": "^2.8.2",
+    "jpeg-js": "^0.4.2"
+  }
+}

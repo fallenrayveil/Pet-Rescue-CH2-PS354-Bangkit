@@ -1,19 +1,17 @@
-FROM python:3.9-slim
+# Use an official Node.js runtime as a parent image
+FROM node:14
 
-# Set the working directory inside the Docker image
+# Set the working directory in the container to /app
 WORKDIR /app
 
-# Copy the requirements.txt file to the working directory
-COPY requirements.txt ./requirements.txt
+# Add the current directory contents into the container at /app
+ADD . /app
 
-# Install the required Python packages specified in requirements.txt
-RUN pip install -r requirements.txt
+# Install any needed packages specified in package.json
+RUN npm install
 
-# Copy the pre-trained model file from your local machine to the Docker image
-COPY model_quantized_float16.tflite ./post_training_quantization/model_quantized_float16.tflite
+# Make port 3000 available to the world outside this container
+EXPOSE 3000
 
-# Copy the entire content of the current directory to the working directory inside the Docker image
-COPY . .
-
-# Specify the command to run when the Docker container starts
-CMD ["python", "app.py"]
+# Run app.js when the container launches
+CMD node app.js
