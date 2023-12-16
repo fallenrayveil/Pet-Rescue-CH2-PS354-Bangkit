@@ -7,12 +7,15 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install
 
+# Copy your application source code 
+COPY . .
+
 # Stage 2: Build the final image
 FROM node:16-alpine
 
 WORKDIR /app
 
-# Copy the built application files
+# Copy the Express application files
 COPY --from=builder /app/ .
 
 # Expose the port your API listens on (e.g., 3000)
