@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "@google-cloud/storage": "^7.7.0",
     "@tensorflow/tfjs-node": "^4.15.0",
