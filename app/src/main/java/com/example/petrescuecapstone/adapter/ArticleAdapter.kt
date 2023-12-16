@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.example.petrescuecapstone.R
 import com.example.petrescuecapstone.response.DataItem
 import com.example.petrescuecapstone.databinding.ItemListArticleBinding
 
@@ -32,7 +33,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.UserViewHolder>() {
                     onItemClickCallback?.onItemClicked(user)
                 }
                 Glide.with(itemView)
-                    .load(user.image)
+                    .load(R.drawable.image_article)
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .centerCrop()
                     .into(imgItemPhoto)

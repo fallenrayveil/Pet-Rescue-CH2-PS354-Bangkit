@@ -14,10 +14,14 @@ import com.example.petrescuecapstone.databinding.FragmentArticleBinding
 import com.example.petrescuecapstone.response.DataItem
 import com.example.petrescuecapstone.ui.customTab
 import com.example.petrescuecapstone.viewmodel.ArticleViewModel
+import com.faltenreich.skeletonlayout.Skeleton
+import com.faltenreich.skeletonlayout.applySkeleton
 
 class ArticleFragment : Fragment() {
     private lateinit var binding: FragmentArticleBinding
     private lateinit var articleAdapter: ArticleAdapter
+    private lateinit var skeleton: Skeleton
+    private lateinit var articleViewModel: ArticleViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,40 +30,49 @@ class ArticleFragment : Fragment() {
     ): View {
         binding = FragmentArticleBinding.inflate(layoutInflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentArticleBinding.inflate(layoutInflater)
-        val homeViewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
-        binding.apply {
-            arrowBack.setOnClickListener {
-            }
-            //apply recycleView
-            articleAdapter = ArticleAdapter()
-            binding.rvArticle.layoutManager = LinearLayoutManager(context)
-            binding.rvArticle.adapter = articleAdapter
-            articleAdapter.setOnItemClickCallBack(object : ArticleAdapter.OnItemClickCallback {
-                override fun onItemClicked(user: DataItem) {
-                    customTab(context!!, user.url!!)
-                    if (user.url != null) {
-                        customTab(context!!, user.url!!)
-                    }
-                }
-            })
+        initUI()
+        observeViewModel()
+    }
 
-            homeViewModel.setArticle()
-            homeViewModel.getArticle().observe(viewLifecycleOwner) {
-                binding.apply {
-                    val article = it.data
-                    if (article != null) {
-                        articleAdapter.setList(article)
-                        Log.e(context!!::class.java.simpleName, "adapter : $articleAdapter ")
-                    } else {
-                        Log.e(context!!::class.java.simpleName, "data not found")
-                    }
+    private fun initUI() {
+        articleViewModel = ViewModelProvider(this).get(ArticleViewModel::class.java)
+
+        binding.arrowBack.setOnClickListener {
+            requireActivity().onBackPressed()
+        }
+
+        articleAdapter = ArticleAdapter()
+        binding.rvArticle.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvArticle.adapter = articleAdapter
+
+        articleAdapter.setOnItemClickCallBack(object : ArticleAdapter.OnItemClickCallback {
+            override fun onItemClicked(user: DataItem) {
+                customTab(requireContext(), user.url!!)
+            }
+        })
+
+        articleViewModel.setArticle()
+
+        skeleton = binding.rvArticle.applySkeleton(R.layout.item_list_article)
+        skeleton.showSkeleton()
+    }
+
+    private fun observeViewModel() {
+        articleViewModel.getArticle().observe(viewLifecycleOwner) { response ->
+            if (response != null) {
+                val articles = response.data
+                if (articles != null) {
+                    articleAdapter.setList(articles)
+                    skeleton.showOriginal()
+                } else {
+                    Log.e(this::class.java.simpleName, "Data not found")
                 }
+            } else {
+                Log.e(this::class.java.simpleName, "Response is null")
             }
         }
     }

@@ -74,7 +74,7 @@
         app:layout_constraintBottom_toBottomOf="@id/searchBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraint_toBottomOf="@id/searchBar" />
+        app:layout_constraintTop_toBottomOf="@id/searchBar" />
 
     <ImageButton
        android:id="@+id/search_id"

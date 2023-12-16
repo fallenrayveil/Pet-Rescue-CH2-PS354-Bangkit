@@ -90,10 +90,12 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
     implementation("androidx.browser:browser:1.4.0")
+    implementation ("com.faltenreich:skeletonlayout:4.0.0")
 
     implementation( "androidx.activity:activity-ktx:1.4.0")
     implementation ("androidx.navigation:navigation-fragment:2.4.2")
     implementation ("androidx.navigation:navigation-ui-ktx:2.4.2")
+    implementation ("androidx.activity:activity:1.4.0")
 
 
 

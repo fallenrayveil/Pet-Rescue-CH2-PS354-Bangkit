@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         val postPetFragment = PostPetFragment()
         val profileFragment = ProfileFragment()
 
+        makeCurrentFragment(tailFragment)
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNavigation.setOnNavigationItemSelectedListener {
@@ -69,7 +70,8 @@ class MainActivity : AppCompatActivity() {
 
             true
         }
-
+        // Select the initial menu item programmatically
+        bottomNavigation.selectedItemId = R.id.button_list_pet
     }
 
     private fun makeCurrentFragment(fragment: Fragment) {

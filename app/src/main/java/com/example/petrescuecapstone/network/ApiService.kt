@@ -1,5 +1,6 @@
 package com.example.petrescuecapstone.network
 
+import com.example.petrescuecapstone.ProfileResponse
 import com.example.petrescuecapstone.response.ArticleResponse
 import com.example.petrescuecapstone.response.SignInResponse
 import com.example.petrescuecapstone.response.SignUpResponse
@@ -7,6 +8,7 @@ import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
@@ -30,7 +32,11 @@ interface ApiService {
     fun getArticle(
     ): Call<ArticleResponse>
 
-
+    @GET("profile")
+    fun getProfile(
+        @Header("Authorization") token: String,
+    ): ProfileResponse
 }
+
 
 
