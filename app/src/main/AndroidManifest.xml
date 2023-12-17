@@ -85,6 +85,8 @@
             </intent-filter>
         </activity>
 
+
+
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"
