@@ -1,15 +1,9 @@
 package com.example.petrescuecapstone.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.petrescuecapstone.ProfileResponse
-import com.example.petrescuecapstone.network.ApiConfig
-import com.example.petrescuecapstone.response.ArticleResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.petrescuecapstone.response.ProfileResponse
 
 class ProfileViewModel: ViewModel() {
     val listUser = MutableLiveData<ProfileResponse>()

@@ -1,4 +1,4 @@
-package com.example.petrescuecapstone
+package com.example.petrescuecapstone.response
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,6 +1,6 @@
 package com.example.petrescuecapstone.network
 
-import com.example.petrescuecapstone.ProfileResponse
+import com.example.petrescuecapstone.response.ProfileResponse
 import com.example.petrescuecapstone.response.ArticleResponse
 import com.example.petrescuecapstone.response.SignInResponse
 import com.example.petrescuecapstone.response.SignUpResponse

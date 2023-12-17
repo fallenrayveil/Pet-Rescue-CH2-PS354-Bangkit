@@ -28,8 +28,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="407dp"
-                android:layout_height="326dp"
+                android:layout_width="417dp"
+                android:layout_height="335dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/wall"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/circleImageView2"
-                android:layout_width="180sp"
-                android:layout_height="180sp"
+                android:layout_width="194dp"
+                android:layout_height="186dp"
                 android:src="@drawable/signup_image"
                 app:civ_border_color="@color/LightCoral"
                 app:civ_border_width="7sp"
