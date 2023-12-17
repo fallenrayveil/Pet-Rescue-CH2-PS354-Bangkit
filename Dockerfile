@@ -1,25 +1,16 @@
-# Stage 1: Build dependencies
-FROM node:16-alpine AS builder
+# Python image to use
+FROM python:3.10-slim
 
-WORKDIR /app
+# Allow statements and log messages to immediately appear in the Knative logs
+ENV PYTHONUNBUFFERED True
 
-# Copy package.json and install dependencies
-COPY package.json ./
-RUN npm install
+# Copy local code to the container image.
+ENV APP_HOME /app
+WORKDIR $APP_HOME
+COPY . ./
 
-# Copy your application source code 
-COPY . .
+# Install all requirement packages specified in requirement.txt
+RUN pip install -r requirements.txt
 
-# Stage 2: Build the final image
-FROM node:16-alpine
-
-WORKDIR /app
-
-# Copy the Express application files
-COPY --from=builder /app/ .
-
-# Expose the port your API listens on (e.g., 3000)
-EXPOSE 3000
-
-# Start the API server
-CMD ["node", "app.js"]
+# Run the web service on container using gunicorn
+CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 0 main:app
