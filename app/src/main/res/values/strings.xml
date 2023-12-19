@@ -69,4 +69,7 @@
     <string name="genderPet">Gender : %s </string>
     <string name="dateLostFound">Date : %s </string>
     <string name="dark_mode">Dark Mode\n</string>
+    <string name="detail">Detail : %s</string>
+    <string name="select_detail">Select Detail</string>
+    <string name="Detail">Detail</string>
 </resources>

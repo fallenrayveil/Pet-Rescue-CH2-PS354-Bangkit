@@ -8,11 +8,13 @@ import com.example.petrescuecapstone.data.UserPreference
 import com.example.petrescuecapstone.network.ApiConfig
 import com.example.petrescuecapstone.network.ApiService
 import com.example.petrescuecapstone.response.ErrorResponse
+import com.example.petrescuecapstone.response.ProfileResponse
 import com.example.petrescuecapstone.response.SignInResponse
 import com.example.petrescuecapstone.response.SignUpResponse
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.Flow
 import retrofit2.HttpException
+import java.io.IOException
 
 class UserRepository private constructor (
     private val userPreference: UserPreference,
@@ -36,7 +38,7 @@ class UserRepository private constructor (
             val response = apiService.login(email, password)
             if (response.error == false) {
                 val tokenAuth = UserModel(name= response.loginResult.name?: "", userId = response.loginResult.userId?: " ", token = response.loginResult.token?: "", isLogin = true)
-                ApiConfig.token= response.loginResult.token
+//                ApiConfig.token= response.loginResult.token
                 userPreference.saveSession(tokenAuth)
                 emit(UiState.Success(response))
             } else {
@@ -65,6 +67,28 @@ class UserRepository private constructor (
             emit(UiState.Error("Registration failed: $errorMessage"))
         }catch (e: Exception){
             emit(UiState.Error("Internet Issues"))
+        }
+    }
+
+    suspend fun logout() {
+        userPreference.logout()
+    }
+
+    fun getProfile(): LiveData<ProfileResponse> = liveData {
+        try {
+            val token = "Bearer ${userPreference.getToken()}"
+            val call = apiService.getProfile(token)
+            val response = call.execute()
+
+            if (response.isSuccessful) {
+                response.body()?.let { emit(it) }
+            } else {
+                // Handle the error, you can emit an empty ProfileResponse or some default value here.
+                emit(ProfileResponse("", ""))
+            }
+        } catch (e: IOException) {
+            // Handle network or request failures here.
+            emit(ProfileResponse("", ""))
         }
     }
     companion object {

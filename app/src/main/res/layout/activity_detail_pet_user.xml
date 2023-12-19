@@ -98,7 +98,7 @@
         <LinearLayout
             android:layout_width="346dp"
             android:layout_height="289dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginStart="32dp"
             android:layout_marginEnd="8dp"
             android:background="@drawable/bg_shape_detail"
@@ -113,6 +113,7 @@
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/id_pet"
+                android:textSize="12dp"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -123,6 +124,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:textSize="12dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/Pet"
                 android:textColor="@color/white"
@@ -134,6 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:textSize="12dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/name_meow"
@@ -147,6 +150,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:textSize="12dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/address"
                 android:textColor="@color/white"
@@ -155,6 +159,7 @@
             <TextView
                 android:id="@+id/Date"
                 android:layout_width="300dp"
+                android:textSize="12dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -170,6 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:textSize="12dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/type_anggora"
@@ -183,6 +189,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:textSize="12dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/genderPet"
                 android:textColor="@color/white"
@@ -195,6 +202,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
+                android:textSize="12dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/email_egasaputra_gmail_com"
                 android:textColor="@color/white"
@@ -203,6 +211,7 @@
             <TextView
                 android:id="@+id/Handphone"
                 android:layout_width="300dp"
+                android:textSize="12dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
@@ -215,12 +224,26 @@
             <TextView
                 android:id="@+id/Reward"
                 android:layout_width="300dp"
+                android:textSize="12dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/signikanegative_variablefont_wght"
                 android:text="@string/reward_money_300_thousand"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detail"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="12dp"
+                android:fontFamily="@font/signikanegative_variablefont_wght"
+                android:text="@string/detail"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 

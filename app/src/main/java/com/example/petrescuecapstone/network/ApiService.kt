@@ -34,8 +34,8 @@ interface ApiService {
 
     @GET("profile")
     fun getProfile(
-        @Header("Authorization") token: String,
-    ): ProfileResponse
+        @Header("Authorization") token: String): Call<ProfileResponse>
+
 }
 
 

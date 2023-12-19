@@ -52,10 +52,10 @@
                 app:layout_constraintVertical_bias="0.43" />
 
             <TextView
+                android:id="@+id/nameTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/ega_saputra"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -111,10 +111,10 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/nameEditText"
                         android:layout_width="match_parent"
                         android:layout_height="40sp"
                         android:enabled="false"
-                        android:text="@string/ega_saputra"
                         android:textColor="@color/black" />
 
                     <TextView
@@ -127,10 +127,10 @@
                         android:textStyle="bold" />
 
                     <EditText
+                        android:id="@+id/emailEditText"
                         android:layout_width="match_parent"
                         android:layout_height="40sp"
                         android:enabled="false"
-                        android:text="@string/egasaxxxxxx_gmail_com"
                         android:textColor="@color/black" />
 
                 </LinearLayout>

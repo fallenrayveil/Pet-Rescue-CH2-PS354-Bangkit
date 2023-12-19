@@ -183,12 +183,49 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/Detail"
+            android:fontFamily="@font/signikanegative_variablefont_wght"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:textColor="@color/LightCoral"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/detailEditTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:boxStrokeColor="@color/LightCoral"
+            style = "@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:layout_constraintTop_toBottomOf="@+id/pet_name">
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/select_detail"
+                android:inputType="none"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
         <Button
             android:id="@+id/btnUpload"
             android:layout_width="378dp"
             android:layout_height="61dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="64dp"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/Green"
             android:text="@string/next"

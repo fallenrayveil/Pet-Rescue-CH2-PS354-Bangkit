@@ -16,6 +16,9 @@ class ViewModelFactory(private val repository: UserRepository): ViewModelProvide
                 modelClass.isAssignableFrom(SignUpViewModel::class.java) -> {
                     SignUpViewModel(repository) as T
                 }
+                modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                    ProfileViewModel(repository) as T
+                }
 
                 else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
             }
