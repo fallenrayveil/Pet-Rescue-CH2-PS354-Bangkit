@@ -11,6 +11,7 @@ from flask import Flask, request, jsonify
 from google.cloud import storage
 import mysql.connector
 from dotenv import load_dotenv
+from keras.models import load_model
 
 # Load environment variables from .env file
 load_dotenv()
@@ -27,9 +28,9 @@ db = mysql.connector.connect(
 cursor = db.cursor()
 
 # Load inceptionv3.h5 pke keras
-model = tf.keras.models.load_model('inceptionv3.h5')
+model = load_model('inceptionv3.h5')
 # Label yang ada di dalam inceptionv3.h5
-label = ['Cat', 'Dog']
+# label = ['Cat', 'Dog']
 
 # Set up Google Cloud Storage
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "config/pet-rescue-407209-74395c7dca01.json"
@@ -43,9 +44,9 @@ def predict_label(img):
         img = img.resize((150, 150), Image.NEAREST)  # Resize to (150, 150)
         img_array = np.array(img)
         img_array = img_array.reshape(1, 150, 150, 3)  # Reshape to (1, 150, 150, 3)
+        img_array = img_array / 255.0  # Scale the image pixels by 255
         pred = model.predict(img_array)
-        # pred_label = "Cat" if pred[0][0] == 0.9824213981628418 else "Dog" if pred[0][0] == 1 else "Cat"
-        pred_label = "Cat" if pred[0][0] < 1 else "Dog"
+        pred_label = "Dog" if pred[0] > 0.9824213981628418 else "Cat"
         return pred_label
     except ValueError as e:
         return {"error": str(e)}
