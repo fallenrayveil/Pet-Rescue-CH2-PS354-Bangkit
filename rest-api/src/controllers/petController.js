@@ -95,12 +95,14 @@ router.put('/report/lost', verifyToken, async (req, res) => {
             pet_name,
             gender,
             reward,
+            date_lost_found,
             province,
             regency,
             found_area,
             email,
             phone_number,
             detail,
+            status
         } = req.body;
 
         // Dapatkan user_id berdasarkan email dari token JWT
@@ -114,12 +116,14 @@ router.put('/report/lost', verifyToken, async (req, res) => {
                 pet_name = ?,
                 gender = ?,
                 reward = ?,
+                date_lost_found = ?,
                 province = ?,
                 regency = ?,
                 found_area = ?,
                 email = ?,
                 phone_number = ?,
                 detail = ?
+                status = ?
             WHERE pet_id = ?;
         `;
 
@@ -128,80 +132,14 @@ router.put('/report/lost', verifyToken, async (req, res) => {
             pet_name,
             gender,
             reward,
+            date_lost_found,
             province,
             regency,
             found_area,
             email,
             phone_number,
             detail,
-            pet_id,
-        ]);
-
-        console.log('Update result:', updateResult);
-
-        res.status(200).json({
-            error: false,
-            message: 'Hewan Hilang Berhasil Di Upload'
-        });
-    } catch (error) {
-        console.error('Error processing report/lost:', error);
-        return res.status(500).json({
-            error: true,
-            message: 'Error processing report/lost. Lihat log server untuk rincian.',
-        });
-    }
-});
-
-
-router.put('/report/found', verifyToken, async (req, res) => {
-    try {
-        console.log('Request Body:', req.body);
-
-        const {
-            user_id,
-            pet_id, // Extract pet_id from the request body
-            pet_name,
-            gender,
-            reward,
-            province,
-            regency,
-            found_area,
-            email,
-            phone_number,
-            detail,
-        } = req.body;
-
-        // Dapatkan user_id berdasarkan email dari token JWT
-        const userId = req.user.user_id;
-
-        // Lakukan pembaruan entri di database
-        const updateLostPetQuery = `
-            UPDATE pets
-            SET
-                user_id = ?,
-                pet_name = ?,
-                gender = ?,
-                reward = ?,
-                province = ?,
-                regency = ?,
-                found_area = ?,
-                email = ?,
-                phone_number = ?,
-                detail = ?
-            WHERE pet_id = ?;
-        `;
-
-        const updateResult = await db.promise().execute(updateLostPetQuery, [
-            user_id,
-            pet_name,
-            gender,
-            reward,
-            province,
-            regency,
-            found_area,
-            email,
-            phone_number,
-            detail,
+            status,
             pet_id,
         ]);
 
@@ -220,6 +158,113 @@ router.put('/report/found', verifyToken, async (req, res) => {
     }
 });
 
+
+app.put('/report/found', verifyToken, async (req, res) => {
+    try {
+        console.log('Request Body:', req.body);
+
+        const {
+            user_id,
+            pet_id, // Extract pet_id from the request body
+            pet_name,
+            gender,
+            reward,
+            date_lost_found,
+            province,
+            regency,
+            found_area,
+            email,
+            phone_number,
+            detail,
+            status
+        } = req.body;
+
+        // Dapatkan user_id berdasarkan email dari token JWT
+        const userId = req.user.user_id;
+
+        // Lakukan pembaruan entri di database
+        const updateLostPetQuery = `
+            UPDATE pets
+            SET
+                user_id = ?,
+                pet_name = ?,
+                gender = ?,
+                reward = ?,
+                date_lost_found = ?,
+                province = ?,
+                regency = ?,
+                found_area = ?,
+                email = ?,
+                phone_number = ?,
+                detail = ?
+                status = ?
+            WHERE pet_id = ?;
+        `;
+
+        const updateResult = await db.promise().execute(updateLostPetQuery, [
+            user_id,
+            pet_name,
+            gender,
+            reward,
+            date_lost_found,
+            province,
+            regency,
+            found_area,
+            email,
+            phone_number,
+            detail,
+            status,
+            pet_id,
+        ]);
+
+        console.log('Update result:', updateResult);
+
+        res.status(200).json({
+            error: false,
+            message: 'Hewan Ditemukan  Berhasil Di Upload'
+        });
+    } catch (error) {
+        console.error('Error processing report/lost:', error);
+        return res.status(500).json({
+            error: true,
+            message: 'Error processing report/lost. Lihat log server untuk rincian.',
+        });
+    }
+});
+
+
+routes.put('/pet/status/:pet_id', verifyToken, async (req, res) => {
+    try {
+        const petId = req.params.pet_id;
+
+        // Memperbarui status dalam database
+        const updateStatusQuery = `
+            UPDATE pets
+            SET status = 1
+            WHERE pet_id = ?;
+        `;
+
+        const updateResult = await db.promise().execute(updateStatusQuery, [petId]);
+
+        if (updateResult.affectedRows === 0) {
+            return res.status(404).json({
+                error: true,
+                message: 'Hewan tidak ditemukan'
+            });
+        }
+
+        res.status(200).json({
+            error: false,
+            message: 'Status hewan berhasil diperbarui'
+        });
+    } catch (error) {
+        console.error('Error updating pet status:', error);
+        return res.status(500).json({
+            error: true,
+            message: 'Error updating pet status. Lihat log server untuk rincian.'
+        });
+    }
+});
 
 // Menghapus posting hewan berdasarkan ID
 router.delete('/pet/:id', verifyToken, (req, res) => {
