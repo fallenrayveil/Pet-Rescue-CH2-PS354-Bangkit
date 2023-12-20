@@ -25,8 +25,12 @@ router.put('/report/lost', verifyToken, petController.reportLostPet);
 //upload data hewan found
 router.put('/report/found', verifyToken, petController.reportFoundPet);
 
+router.put('/pet/status/:pet_id', verifyToken, petController.statusPet);
+
 // Menghapus posting hewan berdasarkan ID
 router.delete('/pet/:id', verifyToken, petController.deletePet);
+
+
 
 
 module.exports = router;
