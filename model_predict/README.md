@@ -1,1 +1,0 @@
-<h1 align="center">Pet Rescue - Rest API Documentation</h1>
