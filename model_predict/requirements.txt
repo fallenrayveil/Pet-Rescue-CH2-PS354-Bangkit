@@ -1,8 +1,0 @@
-Flask
-gunicorn
-tensorflow
-numpy
-pillow
-google-cloud-storage
-mysql-connector-python
-python-dotenv
