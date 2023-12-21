@@ -3,6 +3,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 import io
+import uuid
 import datetime
 import tensorflow as tf
 from tensorflow import keras
@@ -63,9 +64,15 @@ def index():
     img = img.resize((150, 150), Image.NEAREST)
     pred_img = predict_label(img)
 
+    # Generate a random UUID
+    unique_id = uuid.uuid4()
+
+    # Create new filename
+    new_filename = f"{pred_img}_{unique_id}"
+
     # Upload the file to Google Cloud Storage
     bucket = storage_client.get_bucket('pet-rescue-407209.appspot.com')
-    blob = bucket.blob(file.filename)
+    blob = bucket.blob(new_filename)
     blob.upload_from_string(image_bytes, content_type=file.content_type)
 
     # Make the blob publicly viewable
@@ -75,6 +82,7 @@ def index():
     image_url = blob.public_url
 
     print(image_url)
+
     # Insert the URL into your SQL database
     query = """
     INSERT INTO pets 
@@ -82,7 +90,6 @@ def index():
         pet_name,
         type,
         gender,
-        date_lost_found,
         reward,
         image_url,
         province,
@@ -90,8 +97,7 @@ def index():
         found_area,
         email,
         phone_number,
-        detail,
-        status)
+        detail)
     VALUES (
         %s,
         %s,
@@ -103,12 +109,10 @@ def index():
         %s,
         %s,
         %s,
-        %s,
-        %s,
         %s)
     """
     current_timestamp = datetime.datetime.now()
-    cursor.execute(query, ('', pred_img, 'Unknown', current_timestamp, None, image_url, '', '','','','','',''))
+    cursor.execute(query, ('', pred_img, 'Unknown', None, image_url, '', '','','','','lost'))
     
     # Get the ID of the last inserted row
     pet_id = cursor.lastrowid
