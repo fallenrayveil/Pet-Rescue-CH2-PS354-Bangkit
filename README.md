@@ -9,6 +9,12 @@
 | Ardilla Firosya    | A296BSX2736    | Mobile Development    | Universitas Pembangunan Nasional Veteran Jawa Timur    |
 | Mendys Kinata    | A390BSY2653    | Mobile Development    | Universitas Prima Indonesia    |
 
+## Pet Rescue Apps
+
+<p align="center">
+  <img src="https://cdn.discordapp.com/attachments/1166761620358299658/1187411260929740890/PetRescue_App.png" style="width:100%;">
+</p>
+
 ## Repository Branches
 
 In our project is divided into four branches:
