@@ -29,3 +29,28 @@ This dataset consists of a collection of cat and dog images obtained from Kaggle
 | Training Set | Dogs | 4.000 |  
 | Test Set | Cats | 1.000 | 
 | Test Set | Dogs | 1.000 |  
+
+## Model Architecture
+<p align="left">
+InceptionV3 stands as an advanced deep learning model crafted explicitly for image classification purposes. Its design includes a complex structure composed of convolutional layers, pooling layers, and fully connected layers. This intricate architecture allows for the extraction of hierarchical features at different levels of complexity, thereby enabling precise identification and classification of both cats and dogs. <br>
+Moreover, alongside its core architecture, InceptionV3 integrates auxiliary classifiers within intermediate layers. These additional classifiers play a role in aiding gradient propagation during the model's training phase, thereby amplifying the overall efficiency and acceleration of the model's convergence.
+</p>
+
+## Training
+Train the InceptionV3 model with the labeled images from the training set using well-known machine learning frameworks or libraries like TensorFlow or Keras. These frameworks offer pre-existing implementations of InceptionV3. Adjust hyperparameters and training settings through experimentation and based on the model's performance for fine-tuning purposes.
+### Pre-built implementations of InceptionV3
+<code># Download the pre-trained weights. No top means it excludes the fully connected layer it uses for classification.
+!wget --no-check-certificate \
+    https://storage.googleapis.com/mledu-datasets/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5 \
+    -O /tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5</code>
+
+### Fine-tune hyperparameters and Training configurations
+| Type    | Value    |
+|------------|------------|
+| Learning Rate | <code>0.0001</code> | 
+| Optimizer | <code>Adam</code> | 
+| Batch Size | <code>32</code> | 
+| Number of Training Epochs | <code>50</code> | 
+| Input Shape | <code>(150,150,3)</code> | 
+| Data Augmentation Parameters | <code>rescale=1./255,rotation_range=40,width_shift_range=0.2,</code><br><code>height_shift_range=0.2,shear_range=0.2,zoom_range=0.2,</code><br><code>fill_mode='nearest',horizontal_flip=True</code> | 
+| Regularization Techniques |  <code>layers.Flatten()(last_output)</code><br><code>layers.Dense(512, activation='relu')(x)</code><br><code>layers.Dropout(0.5)(x)</code><br><code>layers.Dense (1, activation='sigmoid')(x)</code><br> | 
