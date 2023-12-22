@@ -60,12 +60,22 @@ Train the InceptionV3 model with the labeled images from the training set using 
 | Regularization Techniques |  <code>layers.Flatten()(last_output)</code><br><code>layers.Dense(512, activation='relu')(x)</code><br><code>layers.Dropout(0.5)(x)</code><br><code>layers.Dense (1, activation='sigmoid')(x)</code><br> | 
 
 ## Evaluation and Visualitation
-Once the model training is complete, evaluate its performance using the test set. Measure accuracy and other relevant evaluation metrics to assess the model's classification capability.
+After completing the model training process, assess its performance by utilizing the test set. Evaluate the model's classification capability by measuring metrics such as accuracy and other pertinent evaluation criteria.
 
 ### Model Accuracy & Lose
 <code>- loss: 0.1198 - accuracy: 0.9492 - val_loss: 0.0799 - val_accuracy: 0.9698</code>
 <p align="left">
   <img src="https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/f6d0a429ff1559f020112a05585865c737c5cc14/Result/accuration%20and%20loss.png" alt="Deskripsi Gambar" style="width:80%; border: 1px solid black;">
+</p>
+
+### Prediction Random Image
+<p align="left">
+  <img src="https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/0be860592a2d05591ec8c421fa05966789356f5d/Result/uji%20random%20image.png" alt="Deskripsi Gambar" style="width:80%; border: 1px solid black;">
+</p>
+
+### Prediction Dataset
+<p align="left">
+  <img src="https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/0be860592a2d05591ec8c421fa05966789356f5d/Result/prediction%20dataset.png" alt="Deskripsi Gambar" style="width:80%; border: 1px solid black;">
 </p>
 
 
