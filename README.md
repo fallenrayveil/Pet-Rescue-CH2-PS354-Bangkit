@@ -70,7 +70,7 @@ After completing the model training process, assess its performance by utilizing
 
 ### Prediction Random Image
 <p align="left">
-  <img src="https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/0be860592a2d05591ec8c421fa05966789356f5d/Result/uji%20random%20image.png" alt="Deskripsi Gambar" style="width:80%; border: 1px solid black;">
+  <img src="https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/0be860592a2d05591ec8c421fa05966789356f5d/Result/uji%20random%20image.png" alt="Deskripsi Gambar" style="width:40%;">
 </p>
 
 ### Prediction Dataset
