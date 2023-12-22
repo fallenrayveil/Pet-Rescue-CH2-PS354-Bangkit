@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/LightCoral">
+
+        <ImageView
+            android:id="@+id/arrowBack"
+            style="@style/arrowBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/signikanegative_variablefont_wght"
+            android:text="@string/report_your_pet"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/arrowBack"
+            app:layout_constraintStart_toEndOf="@id/arrowBack"
+            app:layout_constraintTop_toTopOf="@id/arrowBack" />
+
+        <LinearLayout
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/rounded_corner_atas"
+            android:backgroundTint="?android:attr/colorBackground"
+            android:orientation="vertical"
+            android:padding="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/arrowBack">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/signika_semibold"
+                android:text="Is Your Pet Lost?"
+                android:textColor="@color/LightCoral" />
+
+            <Button
+                android:id="@+id/btnlostpet"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="11sp"
+                android:backgroundTint="@color/LightCoral"
+                android:fontFamily="@font/signika_semibold"
+                android:text="@string/report_a_lost_pet"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:boxStrokeColor="@color/LightCoral"
+                app:cornerRadius="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23sp"
+                android:fontFamily="@font/signika"
+                android:text="Have you ever found someone's pet but don't know who the owner is?"
+                android:textColor="@color/LightCoral" />
+
+            <Button
+                android:id="@+id/btnfoundpet"
+                android:layout_width="match_parent"
+                android:layout_height="50sp"
+                android:layout_marginTop="11sp"
+                android:backgroundTint="@color/LightCoral"
+                android:fontFamily="@font/signika_semibold"
+                android:text="@string/report_found_pet"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:boxStrokeColor="@color/LightCoral"
+                app:cornerRadius="10sp" />
+
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

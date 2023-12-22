@@ -1,0 +1,8 @@
+<!-- button_lost_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white" /> <!-- Warna background untuk "Lost" -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/LightCoral" /> <!-- Garis tepi warna lightcoral -->
+     <!-- Radius corner 8dp -->
+</shape>

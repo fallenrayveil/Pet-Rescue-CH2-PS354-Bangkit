@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="report_your_pet">Report Your Pet</string>
+    <string name="post">Post</string>
+    <string name="reward_input">Reward (Opsional)</string>
+    <string name="area">Area*</string>
+    <string name="this_will_notify">This will notify the user that a pet has been found. Do you want to set the status to reunion?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="found">Found</string>
+</resources>

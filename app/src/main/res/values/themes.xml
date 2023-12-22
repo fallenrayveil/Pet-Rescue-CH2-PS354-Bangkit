@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PetRescueCapstone" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/LightCoral</item>
+        <item name="colorPrimaryVariant">@color/LightCoral</item>
+        <item name="android:statusBarColor">@color/LightCoral</item>
+    </style>
+
+    <style name="Theme.PetRescueCapstone" parent="Base.Theme.PetRescueCapstone" />
+
+    <style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name ="android:color">@color/ApproxPink</item>
+    </style>
+
+    <style name="arrowBack">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/rounded_corner_smaller</item>
+        <item name="android:src">@drawable/baseline_keyboard_backspace_24</item>
+    </style>
+
+</resources>

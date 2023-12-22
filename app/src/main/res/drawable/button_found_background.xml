@@ -1,0 +1,8 @@
+<!-- button_found_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/LightCoral" /> <!-- Warna background untuk "Found" -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/LightCoral" /> <!-- Garis tepi warna lightcoral -->
+   <!-- Radius corner 8dp -->
+</shape>
