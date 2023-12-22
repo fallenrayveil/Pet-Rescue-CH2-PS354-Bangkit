@@ -58,3 +58,8 @@ Train the InceptionV3 model with the labeled images from the training set using 
 | Input Shape | <code>(150,150,3)</code> | 
 | Data Augmentation Parameters | <code>rescale=1./255,rotation_range=40,width_shift_range=0.2,</code><br><code>height_shift_range=0.2,shear_range=0.2,zoom_range=0.2,</code><br><code>fill_mode='nearest',horizontal_flip=True</code> | 
 | Regularization Techniques |  <code>layers.Flatten()(last_output)</code><br><code>layers.Dense(512, activation='relu')(x)</code><br><code>layers.Dropout(0.5)(x)</code><br><code>layers.Dense (1, activation='sigmoid')(x)</code><br> | 
+
+## Evaluation and Visualitation
+Once the model training is complete, evaluate its performance using the test set. Measure accuracy and other relevant evaluation metrics to assess the model's classification capability.
+
+
