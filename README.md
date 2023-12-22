@@ -27,4 +27,5 @@ Mobile Development contributes to designing the UI and running the features cont
 5. Search Pet By Name Pet
 
 <h1 align="center">Design UI/UX</h1>
-![Desain tanpa judul](https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/assets/135436843/84b9b0f4-4e03-447f-b007-b70b821f15db)
+![UI/UX PetRescue]
+(https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/assets/135436843/84b9b0f4-4e03-447f-b007-b70b821f15db)
