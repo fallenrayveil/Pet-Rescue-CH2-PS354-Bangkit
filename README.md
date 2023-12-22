@@ -62,4 +62,10 @@ Train the InceptionV3 model with the labeled images from the training set using 
 ## Evaluation and Visualitation
 Once the model training is complete, evaluate its performance using the test set. Measure accuracy and other relevant evaluation metrics to assess the model's classification capability.
 
+### Model Accuracy & Lose
+<code>- loss: 0.0344 - accuracy: 0.9877 - val_loss: 0.0276 - val_accuracy: 0.9929</code>
+<p align="left">
+  <img src="[https://github.com/azvadennys/iFiCam-C23-PS113-Bangkit/blob/MachineLearning/Result/accuration%20and%20loss.png](https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/f6d0a429ff1559f020112a05585865c737c5cc14/Result/accuration%20and%20loss.png)https://github.com/fallenrayveil/Pet-Rescue-CH2-PS354-Bangkit/blob/f6d0a429ff1559f020112a05585865c737c5cc14/Result/accuration%20and%20loss.png" alt="Deskripsi Gambar" style="width:50%; border: 1px solid black;">
+</p>
+
 
